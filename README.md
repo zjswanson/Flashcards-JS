@@ -1,4 +1,4 @@
-# _Walrus_
+# _Flashcards_
 
 #### _Showing and Hiding with Flashcards jQuery, 1/10/2017_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-_Exploring use of jQuery to toggle display states_
+_Exploring use of jQuery to toggle display states. Utilizing data to generate HTML._
 
 ## Setup/Installation Requirements
 

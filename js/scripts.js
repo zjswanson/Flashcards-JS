@@ -8,17 +8,6 @@ $(function() {
     ["Functions", "Anonymous or named set of intstructions with parameter list"]
   ];
 
-  /*
-  <div class="panel panel-default">
-    <div class="panel-heading clickable-heading">
-      <h4>Something to explain</h4>
-    </div>
-    <div class="panel-body hidden clickable-body">
-      <p>Something explained</p>
-    </div>
-  </div>
-  */
-
   var dataRow, allPanels = '';
 
   for (dataRow = 0; dataRow < panelData.length; dataRow ++) {
@@ -45,10 +34,6 @@ $(function() {
         '</div>' +
       '</div>' +
     '</div>';
-    // We are displaying three columns per row on the page.
-    // Do we need to start another row on the page?
-    // If on a row greater than the first, and the column is the first
-    // then start a new row
 
   };
   allPanels +=
