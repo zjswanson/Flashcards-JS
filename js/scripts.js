@@ -19,20 +19,44 @@ $(function() {
   </div>
   */
 
-  var panelRow;
-  for (panelRow = 0; panelRow < panelData.length; panelRow ++) {
-    var onePanel =
-    '<div class="panel panel-default">' +
-    '<div class="panel-heading clickable-heading">' +
-    '<h4>' + panelData[panelRow][0] + '</h4>' +
-    '</div>' +
-    '<div class="panel-body hidden clickable-body">' +
-    '<p>' + panelData[panelRow][1] + '</p>' +
-    '</div>' +
+  var dataRow, allPanels = '';
+
+  for (dataRow = 0; dataRow < panelData.length; dataRow ++) {
+
+    // Is this a new row of 3 columns? Yes if column will be 0.
+    if (dataRow % 3 === 0) {
+      // Given a new row of columns, do we need to end the previous row?
+      // Yes, if we are on any data row past the first one.
+      if (dataRow > 0) {
+        allPanels += '</div>';
+      };
+
+      allPanels += '<div class="row">';
+    };
+
+    allPanels +=
+    '<div class="col-md-4">' +
+      '<div class="panel panel-default">' +
+        '<div class="panel-heading clickable-heading">' +
+          '<h4>' + panelData[dataRow][0] + '</h4>' +
+        '</div>' +
+        '<div class="panel-body hidden clickable-body">' +
+          '<p>' + panelData[dataRow][1] + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+    // We are displaying three columns per row on the page.
+    // Do we need to start another row on the page?
+    // If on a row greater than the first, and the column is the first
+    // then start a new row
+
+  };
+  allPanels +=
     '</div>';
 
-    $("#panels").append(onePanel);
-  };
+  $("#panels").append(allPanels);
+
+
 
   $(".clickable-heading").click( function() {
     $(this).siblings(".clickable-body").removeClass("hidden");
