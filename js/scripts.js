@@ -1,21 +1,11 @@
 $(function() {
-  // Function Section
 
-  // Respond to click on link to toggle display of content
-  $("#toggle-shown-link").click( function() {
-    $("#initially-shown").fadeToggle();
-    $("#initially-hidden").fadeToggle();
+  $(".clickable-heading").click( function() {
+    $(this).siblings(".clickable-body").removeClass("hidden");
   });
 
-  $(".slide-toggle").click( function() {
-    $(".slide").slideToggle();
+  $(".clickable-body").click( function() {
+    $(this).addClass("hidden");
   });
 
-  $("#dark-button").click(function() {
-    $("body").addClass("dark");
-  });
-
-  $("#light-button").click(function() {
-    $("body").removeClass();
-  });
 });
